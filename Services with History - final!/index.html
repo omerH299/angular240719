@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="dataApp" lang="en">
+<head>
+    <title>Services!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="globalconst.service.js"></script>
+    <script src="data.service.js"></script>
+    <script src="api.service.js"></script>
+    <script src="service.service.js"></script>
+    <script src="input.ctrl.js"></script>
+    <script src="sum.ctrl.js"></script>
+    <script src="div.ctrl.js"></script>
+    <script src="a.ctrl.js"></script>
+    <script src="b.ctrl.js"></script>
+    <script src="history.ctrl.js"></script>
+</head>
+<body>
+
+<div ng-controller="inputCtrl">
+    <p>A <label>
+        <input type="number" ng-model="numbers.a">
+    </label></p>
+    <p>B <label>
+        <input type="number" ng-model="numbers.b">
+    </label></p>
+    <label>
+        <input type="radio" name="color" value="green" ng-model="ds.color">
+    </label> Green/Red<br>
+    <label>
+        <input type="radio" name="color" value="blue" ng-model="ds.color">
+    </label> Blue/Brown<br>
+</div>
+
+<div ng-controller="sumCtrl">
+    <p ng-class="getColor()">Sum Controller : A + B = {{numbers.a + numbers.b}}</p>
+</div>
+
+<div ng-controller="divCtrl">
+    <p ng-show="numbers.b != 0">Sum Controller : A / B = {{numbers.a / numbers.b}}</p>
+    <p ng-show="numbers.b == 0">Sum Controller : {{divError}}</p>
+</div>
+
+<div ng-controller="aCtrl">
+    <h3>A Controller : </h3>
+    <p ng-show="numbers.a > 0" ng-repeat="n in aNumbers">{{n}} </p>
+    <p ng-show="numbers.a < 0">{{aError}}</p>
+    <p ng-show="numbers.a == 0">A equals to zero</p>
+</div>
+
+<div ng-controller="bCtrl">
+    <h3>B Controller : </h3>
+    <p ng-show="numbers.b > 0" ng-repeat="n in bNumbers">{{n}} </p>
+    <p ng-show="numbers.b < 0">{{bError}}</p>
+    <p ng-show="numbers.b == 0">B equals to zero</p>
+</div>
+
+<div ng-controller="historyCtrl">
+    <h3>A History : </h3>
+    <p ng-repeat="n in aNumbers track by $index">{{n}} </p>
+    <hr>
+    <h3>B History : </h3>
+    <p ng-repeat="m in bNumbers track by $index">{{m}} </p>
+</div>
+</body>
+</html>
