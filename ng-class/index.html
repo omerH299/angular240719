@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+    <title>Clock!</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="angular.js"></script>
+
+    <script src="bootstrap.js"></script>
+
+    <script src="parentCtrl.js"></script>
+</head>
+<body >
+
+    <div ng-controller="parentCtrl">
+
+  
+        <p>NAME : <input type="text" ng-model="name"></p>
+        <p>PHONE : <input type="text" ng-model="phone"></p>
+        <p>AGE : <input type="number" ng-model="age"></p>
+        <hr>
+        <h2 ng-class='getClass()'>Verified!</h2>
+
+    </div>
+
+    
+    <br>
+</body>
+</html>

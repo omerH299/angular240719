@@ -1,0 +1,16 @@
+.ok {
+    color : green
+}
+
+.missing {
+    color : red;
+}
+
+.halfMissing {
+    color : orange;
+}
+
+.illegalAge {
+    color : blue;
+}
+
